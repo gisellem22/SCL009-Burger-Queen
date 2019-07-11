@@ -1,0 +1,35 @@
+[debug] [2019-07-11T21:26:42.980Z] ----------------------------------------------------------------------
+[debug] [2019-07-11T21:26:42.982Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-07-11T21:26:42.982Z] CLI Version:   7.0.2
+[debug] [2019-07-11T21:26:42.982Z] Platform:      linux
+[debug] [2019-07-11T21:26:42.982Z] Node Version:  v10.16.0
+[debug] [2019-07-11T21:26:42.983Z] Time:          Thu Jul 11 2019 17:26:42 GMT-0400 (GMT-04:00)
+[debug] [2019-07-11T21:26:42.983Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-11T21:26:42.990Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-11T21:26:42.990Z] > authorizing via signed-in user
+[debug] [2019-07-11T21:26:42.990Z] [iam] checking project burger-queen-dg for permissions ["firebase.projects.get"]
+[debug] [2019-07-11T21:26:42.992Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/burger-queen-dg:testIamPermissions  
+
+[debug] [2019-07-11T21:26:44.137Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-11T21:26:44.140Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/burger-queen-dg  
+ 
+[debug] [2019-07-11T21:26:45.205Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/laboratoriad017/Escritorio/SCL009-Burger-Queen'...
+[info] 
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "10"
+[debug] [2019-07-11T21:26:45.222Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/363060954501/clients/_:getWebAppConfig  
+ 
+[debug] [2019-07-11T21:26:45.224Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/363060954501:getServerAppConfig  
+ 
+[debug] [2019-07-11T21:26:45.662Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist/SCL009-Burger-Queen
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-07-11T21:26:45.685Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: Emulator started at http://localhost:5001
+[info] i  functions: Watching "/home/laboratoriad017/Escritorio/SCL009-Burger-Queen/functions" for Cloud Functions...
+[debug] [2019-07-11T21:26:46.365Z] Functions runtime initialized.
+[debug] [2019-07-11T21:26:46.365Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[warn] ⚠  The Cloud Functions emulator requires the module "firebase-admin" to be installed. This package is in your package.json, but it's not available. You probably need to run "npm install" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
