@@ -13,7 +13,7 @@ export class WaiterComponent implements OnInit {
   menus: Menu[];
 
   filterType(menuType: string) {
-    this.getMenu();
+  this.getMenu();
    this.menus = this.menus.filter(element => {
       return element.type === menuType})
   }
@@ -29,6 +29,13 @@ export class WaiterComponent implements OnInit {
   filterBevarage(menuType: string) {
     this.filterType(menuType);
   }
+
+  selectedMenu: Menu;
+
+  onSelect(menu: Menu): void {
+  this.selectedMenu = menu;
+  console.log(menu)
+}
   
   constructor(private menuService: MenuService) { }
 

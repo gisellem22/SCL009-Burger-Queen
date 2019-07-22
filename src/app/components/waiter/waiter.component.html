@@ -5,9 +5,11 @@
 <button (click)="filterBevarage('beverage')">LÍQUIDOS</button>
 
 <ul>
-  <li *ngFor="let menu of menus">
+  <li *ngFor="let menu of menus"
+  (click)="onSelect(menu)">
     <span>{{menu.id}}</span> {{menu.name}} {{menu.price}}
   </li>
 </ul>
 
+<app-total [menu]="selectedMenu"></app-total>
 
