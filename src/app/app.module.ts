@@ -7,6 +7,10 @@ import { WaiterComponent } from './components/waiter/waiter.component';
 import { KitchenComponent } from './components/kitchen/kitchen.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
+import { AngularFireModule } from  '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +20,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
