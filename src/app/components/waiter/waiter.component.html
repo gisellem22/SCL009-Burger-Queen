@@ -11,5 +11,10 @@
   </li>
 </ul>
 
-<app-total [menu]="selectedMenu"></app-total>
-
+<div *ngIf="selectedMenu">
+    <ul>
+        <li *ngFor="let menu of selectedMenu">
+  <p>{{menu.name | uppercase}} {{menu.price}}</p>
+</li>
+</ul>
+</div>
