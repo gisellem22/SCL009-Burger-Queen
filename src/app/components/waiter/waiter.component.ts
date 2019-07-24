@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Menu } from 'src/app/menu'
 import { MenuService } from 'src/app/services/menu.service'
+import { ORDER } from 'src/app/order'
 
 @Component({
   selector: 'app-waiter',
@@ -11,7 +12,10 @@ import { MenuService } from 'src/app/services/menu.service'
 export class WaiterComponent implements OnInit {
 
   menus: Menu[];
-
+  
+  order:ORDER;
+  
+  
   filterType(menuType: string) {
   this.getMenu();
    this.menus = this.menus.filter(element => {
@@ -30,14 +34,21 @@ export class WaiterComponent implements OnInit {
     this.filterType(menuType);
   }
 
-  selectedMenu: Menu;
+  selectedMenu: Menu[] = [];
 
   onSelect(menu: Menu): void {
-  this.selectedMenu = menu;
+  this.selectedMenu.push(menu);
   console.log(menu)
 }
   
-  constructor(private menuService: MenuService) { }
+  constructor(private menuService: MenuService) {
+      let holi:Menu
+    this.order= new ORDER(2, "giselle", holi);
+      this.order.id = 2;
+      this.order.name= "giselle";
+      console.log(this.order)
+
+   }
 
   ngOnInit() {
   }
