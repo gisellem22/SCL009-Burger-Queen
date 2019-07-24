@@ -1,20 +1,39 @@
 <h2>My Menu</h2>
 
+<div  style="float:left">
 <button (click)="filterBreakFast('breakfast')">DESAYUNO</button>
 <button (click)="filterPrincipal('principal')">PRINCIPAL</button>
 <button (click)="filterBevarage('beverage')">LÍQUIDOS</button>
 
+
 <ul>
   <li *ngFor="let menu of menus"
-  (click)="onSelect(menu)">
+  (click)="onSelect(menu)"
+  style="background-color:darkmagenta;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 45px;
+  color: aliceblue;
+  margin: 5px;" 
+  >
     <span>{{menu.id}}</span> {{menu.name}} {{menu.price}}
   </li>
 </ul>
+</div>
 
-<div *ngIf="selectedMenu">
+<div  *ngIf="selectedMenu"  style="
+padding-left: 50px;
+width: 300px;
+float:left;
+border-style: double">
+    <strong>Pedido: {{order.name}}</strong>  
     <ul>
         <li *ngFor="let menu of selectedMenu">
-  <p>{{menu.name | uppercase}} {{menu.price}}</p>
+  <p>{{menu.name | uppercase}} {{menu.price}}  <img  width="25px"  (click)="onDelete(menu)"  src="https://image.flaticon.com/icons/png/512/65/65307.png"> </p>
 </li>
+  <p >Total = {{total}} </p>  
 </ul>
 </div>
+

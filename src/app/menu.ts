@@ -2,8 +2,8 @@ export class Menu {
     public id: string;
     public type: string;
     public name: string;
-      public price: string;
-      constructor(id: string,type: string, nombre:string, precio:string) {
+      public price: number;
+      constructor(id: string,type: string, nombre:string, precio:number) {
           this.id = id;
           this.id = type;
           this.name = nombre;

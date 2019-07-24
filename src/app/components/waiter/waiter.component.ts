@@ -14,6 +14,8 @@ export class WaiterComponent implements OnInit {
   menus: Menu[];
   
   order:ORDER;
+
+  total=0;
   
   
   filterType(menuType: string) {
@@ -38,17 +40,33 @@ export class WaiterComponent implements OnInit {
 
   onSelect(menu: Menu): void {
   this.selectedMenu.push(menu);
-  console.log(menu)
+ 
+  this.total = 0;
+  this.selectedMenu.forEach(element => {
+    this.total = this.total + parseInt(element.price.toString());
+  });
+
 }
-  
+
+onDelete(menu: Menu): void {
+  const index: number = this.selectedMenu.indexOf(menu);
+    if (index !== -1) {
+        this.selectedMenu.splice(index, 1);
+    }
+    this.total = 0;
+    this.selectedMenu.forEach(element => {
+      this.total = this.total + parseInt(element.price.toString());
+    });
+}
+
+
   constructor(private menuService: MenuService) {
       let holi:Menu
     this.order= new ORDER(2, "giselle", holi);
       this.order.id = 2;
-      this.order.name= "giselle";
+      this.order.name= "Denisse";
       console.log(this.order)
-
-   }
+ }
 
   ngOnInit() {
   }
