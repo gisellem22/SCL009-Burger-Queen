@@ -23,7 +23,7 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase, 'angular-fs'),
     AngularFirestoreModule
   ],
   providers: [],
