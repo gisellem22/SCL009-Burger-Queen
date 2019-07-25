@@ -1,1 +1,9 @@
-<p>kitchen works!</p>
+<div *ngIf="menus?.length > 0; else noMenus">
+    <ul *ngFor="let menus of menus" > 
+        <span>{{menus.id}}</span> {{menus.name}} {{menus.price}}
+    </ul>
+</div>
+
+<ng-template #noTasks>
+    <h5>There is not Tasks yet.</h5>
+  </ng-template>

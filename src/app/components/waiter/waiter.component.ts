@@ -55,7 +55,7 @@ onDelete(menu: Menu): void {
     }
     this.total = 0;
     this.selectedMenu.forEach(element => {
-      this.total = this.total + parseInt(element.price.toString());
+      this.total = this.total + element.price;
     });
 }
 

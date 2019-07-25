@@ -7,8 +7,8 @@ import { WaiterComponent } from './components/waiter/waiter.component';
 import { KitchenComponent } from './components/kitchen/kitchen.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
-import { AngularFireModule } from  '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from  'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -21,8 +21,10 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFireModule,
+    AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase, 'angular-fs'),
-    AngularFirestoreModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
