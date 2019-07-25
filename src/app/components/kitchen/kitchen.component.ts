@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Menu } from 'src/app/menu'
 import { MenuService } from 'src/app/services/menu.service'
@@ -7,7 +7,7 @@ import { MenuService } from 'src/app/services/menu.service'
   selector: 'app-kitchen',
   templateUrl: './kitchen.component.html',
   styleUrls: ['./kitchen.component.css'], 
-  encapsulation: ViewEncapsulation.None
+
 })
 export class KitchenComponent implements OnInit {
 
