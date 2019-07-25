@@ -9,13 +9,23 @@ import { ORDER } from 'src/app/order'
   templateUrl: './waiter.component.html',
   styleUrls: ['./waiter.component.css']
 })
-export class WaiterComponent implements OnInit {
+export class WaiterComponent implements OnInit {  
 
   menus: Menu[];
   
   order:ORDER;
 
   total=0;
+
+  constructor(
+    private menuService: MenuService
+  ) {
+
+  }
+
+  ngOnInit() {
+    this.order= new ORDER(0,"denisse", [],0);
+  }
   
   
   filterType(menuType: string) {
@@ -40,11 +50,15 @@ export class WaiterComponent implements OnInit {
 
   onSelect(menu: Menu): void {
   this.selectedMenu.push(menu);
+  this.order.order.push(menu);
  
   this.total = 0;
+
   this.selectedMenu.forEach(element => {
-    this.total = this.total + parseInt(element.price.toString());
+    this.total = this.total + (element.price);
   });
+  
+  this.order.total = this.total;
 
 }
 
@@ -58,21 +72,17 @@ onDelete(menu: Menu): void {
       this.total = this.total + element.price;
     });
 }
-
-
-  constructor(private menuService: MenuService) {
-      let holi:Menu
-    this.order= new ORDER(2, "giselle", holi);
-      this.order.id = 2;
-      this.order.name= "Denisse";
-      console.log(this.order)
- }
-
-  ngOnInit() {
-  }
+// add(name: string): void {
+//   this.order.name = name;
+//     };
   
   getMenu(): void {
     this.menuService.getMenu()
         .subscribe(menu => this.menus = menu);
+  }
+
+  sendOrder(name: string): void {
+    this.order.name = name;
+    console.log("ORDER:", this.order)
   }
 }
