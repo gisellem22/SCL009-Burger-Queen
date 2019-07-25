@@ -1,4 +1,9 @@
 <h2>My Menu</h2>
+<div>
+    <label>Pedido de:
+      <input #clientName />
+    </label>
+  </div>
 
 <div  style="float:left">
 <button (click)="filterBreakFast('breakfast')">DESAYUNO</button>
@@ -28,12 +33,16 @@ padding-left: 50px;
 width: 300px;
 float:left;
 border-style: double">
-    <strong>Pedido: {{order.name}}</strong>  
+    <!-- <strong>Pedido: {{order.name}}</strong>   -->
+    <div id="name"></div>
     <ul>
         <li *ngFor="let menu of selectedMenu">
-  <p>{{menu.name | uppercase}} {{menu.price}}  <img  width="25px"  (click)="onDelete(menu)"  src="https://image.flaticon.com/icons/png/512/65/65307.png"> </p>
+  <p>{{menu.name | uppercase}} {{menu.price}}  <img  width="25px"  (click)="onDelete(menu)"  src="https://image.flaticon.com/icons/svg/60/60578.svg"> </p>
 </li>
-  <p >Total = {{total}} </p>  
+  <h2>Total = {{total}} </h2>  
 </ul>
+
+<button (click)="sendOrder(clientName.value)">prueba para ver objeto order</button>
+
 </div>
 
