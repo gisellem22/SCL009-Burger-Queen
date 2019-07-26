@@ -20,7 +20,7 @@
 .container > main,
 .container .menu-box
 .container .total-box {
-    color: purple;
+    color:  rgb(63, 7, 95);
     background: white;
     padding: 20px;
     border-radius: 5px;
@@ -33,13 +33,28 @@
     grid-area: total;
 }
 
-.label {
+.name {
     color: white;
+
     font-size: 20px;
 grid-area: label;
 }
+.box-options {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(3,1fr);
+    grid-area: option;
+
+    grid-template-areas: "option option option"
+                         
+
+}
+/* .options {
+    grid-area: option;
+} */
 .btn-menu {  
-    color:  rgb(63, 7, 95);
+    background:  rgb(63, 7, 95);
+    color: white;
     border-radius: 5px;
     margin: 5px;
     border: none;
@@ -48,12 +63,43 @@ grid-area: label;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+
 }
+
+.food {
+    background:  rgb(63, 7, 95);
+    color: white;
+    border-radius: 5px;
+    margin: 15px;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+/* .btn-menu:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+} */
+
 .selected-option {
-    padding-left: 50px;
-    width: 300px;
-    float:left;
+    font-weight: bolder;
 }
-.menus-side {
-    float:left
+
+.result {
+    font-weight: bolder;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(2,1fr);
+    grid-area: food;
+
+    grid-template-areas: "h3 button"
+}
+.result > h3 {
+    grid-area: h3;
+ 
+}
+.result > button {
+    grid-area: button;
 }

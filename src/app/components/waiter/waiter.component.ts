@@ -17,10 +17,9 @@ export class WaiterComponent implements OnInit {
 
   total=0;
 
-  constructor(
-    private menuService: MenuService
-  ) {
-
+  constructor( private menuService: MenuService ) 
+  {
+   
   }
 
   ngOnInit() {
@@ -72,17 +71,19 @@ onDelete(menu: Menu): void {
       this.total = this.total + element.price;
     });
 }
-// add(name: string): void {
-//   this.order.name = name;
-//     };
   
   getMenu(): void {
     this.menuService.getMenu()
         .subscribe(menu => this.menus = menu);
   }
 
+  
   sendOrder(name: string): void {
     this.order.name = name;
-    console.log("ORDER:", this.order)
+    console.log("ORDER:", this.order);
+
+   /*llamar a la funncion del servicio, para indicarle que debe enviar esta orden 
+   escogida a firebase*/
+   this.menuService.addOrder(this.order); 
   }
 }

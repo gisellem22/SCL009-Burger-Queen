@@ -1,5 +1,5 @@
 <section class="container"> 
-  <div class="label">
+  <div class="name">
       <div class="input-group input-group-lg">
           <div class="input-group-prepend">
             <span class="input-group-text">Pedido de:</span>
@@ -7,38 +7,44 @@
           <input #clientName type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
         </div>
       </div>
-      <!-- <label><h1>Pedido de:</h1>
-        <input class="input-group-text" #clientName />
-      </label>  
-    </div>  -->
+
+
 <main class="menu-box">
-<button class="btn-menu" (click)="filterBreakFast('breakfast')">DESAYUNO</button>
-<button class="btn-menu" (click)="filterPrincipal('principal')">PRINCIPAL</button>
-<button class="btn-menu" (click)="filterBevarage('beverage')">LÍQUIDOS</button>
 
+<div class="box-options">
 
-<ul>
-  <li *ngFor="let menu of menus"
-  (click)="onSelect(menu)"
-  class="btn-menu"
-  >
-    <span>{{menu.id}}</span> {{menu.name}} {{menu.price}}
-  </li>
-</ul>
+      <button class="btn-menu" (click)="filterBreakFast('breakfast')">DESAYUNO</button>
+      <button class="btn-menu" (click)="filterPrincipal('principal')">PRINCIPAL</button>
+      <button class="btn-menu" (click)="filterBevarage('beverage')">LÍQUIDOS</button>
+
+</div>
+
+<div>
+    <ul>
+      <li *ngFor="let menu of menus"
+      (click)="onSelect(menu)"
+      class="food"
+      >
+        <span>{{menu.name| uppercase}}</span> ${{menu.price}}
+      </li>
+    </ul>
+    </div>
 </main>
 
 <main class="total-box">
-<div  *ngIf="selectedMenu"  
-class="selected-option">
-    <div id="name"></div>
-    <ul>
-        <li *ngFor="let menu of selectedMenu">
-  <p>{{menu.name | uppercase}} {{menu.price}}  <img  width="25px"  (click)="onDelete(menu)"  src="https://image.flaticon.com/icons/svg/60/60578.svg"> </p>
+
+<div  *ngIf="selectedMenu" class="selected-option">
+
+<ul>
+<li *ngFor="let menu of selectedMenu">
+<p>{{menu.name | uppercase}} ${{menu.price}}  <img  width="25px"  (click)="onDelete(menu)"  src="../../../assets/img/rounded-remove-button.png"> </p>
 </li>
-  <h2>Total = {{total}} </h2>  
 </ul>
 
-<button class="btn-menu" (click)="sendOrder(clientName.value)">Enviar Pedido</button>
+<div class="result">
+    <h3>Total = ${{total}} </h3> 
+    <button class="btn-menu" (click)="sendOrder(clientName.value)">Enviar Pedido</button>    
+</div>
 
 </div>
 </main>

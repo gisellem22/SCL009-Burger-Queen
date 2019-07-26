@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Menu } from 'src/app/menu'
 import { MenuService } from 'src/app/services/menu.service'
+import { ORDER } from 'src/app/order';
 
 @Component({
   selector: 'app-kitchen',
@@ -11,14 +11,23 @@ import { MenuService } from 'src/app/services/menu.service'
 })
 export class KitchenComponent implements OnInit {
 
-  menus: Menu[];
+ orders : ORDER[];
 
-  constructor(public menuService: MenuService) { }
+  constructor(public menuService: MenuService) {
+   }
 
   ngOnInit() {
-    this.menuService.getMenus().subscribe(menus =>{
-      this.menus = menus; 
+      this.menuService.getOrders().subscribe(order =>{
+      this.orders = order; 
     });
   }
 
+  /*Elimina el ID de Firestore */
+  deleteOrder(order:ORDER) {
+    const response = confirm('¿Quieres eliminar esta orden?');
+    if (response ) {
+      this.menuService.deleteOrder(order);
+    }
+    return;
+  }
 }
