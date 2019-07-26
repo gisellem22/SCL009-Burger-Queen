@@ -1,0 +1,39 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    text-align:center;
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(1, auto);
+
+    grid-template-areas: "router h1 h1 title"
+                         
+}
+
+h1 {
+    color: white;
+    font-family: 'Shadows Into Light Two', cursive;
+    grid-area: h1;
+    
+}
+.header .title {
+    grid-area: title;
+}
+.header .router {
+    grid-area: router;
+}
+.logo-img {
+    width: 150px;
+    height: 150px;
+    float: right;
+}
+
