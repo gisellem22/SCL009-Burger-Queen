@@ -1,20 +1,24 @@
-<!-- -->
-<div *ngIf="orders?.length > 0; else noOrder">
-    <ul *ngFor="let order of orders" > 
-        <div >
-       Pedido de : {{order.name}} 
-        <ul *ngFor="let item of order.order" >  
-             {{item.type}}
-             {{item.name}}
+<section class="kitchen-box">
+    <main >
+            <div *ngIf="orders?.length > 0; else noOrder" >
+                    <ul *ngFor="let order of orders" > 
+                        <div class="order-queue" >
+                       <h1>Pedido de : {{order.name}}</h1> 
+                        <ul *ngFor="let item of order.order" >  
+                             <p>{{item.name}}</p>
+                
+                        </ul>
+                        <div>
+                                <button class="btn-menu" (click)="deleteOrder(order)">Borrar</button>
+                   </div>
+                        </div>
+            
+   </ul>
+</div> 
+<ng-template #noOrders>
+       <h5>No hay Pedidos</h5>
+     </ng-template>    
+    </main>
+                                       
+</section>
 
-        </ul>
-        </div>
-        <div>
-                     <button  (click)="deleteOrder(order)">Borrar</button>
-        </div>
-    </ul>
-</div>
-
-<ng-template #noTasks>
-    <h5>There is not Tasks yet.</h5>
-  </ng-template>
