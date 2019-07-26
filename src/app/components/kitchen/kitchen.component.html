@@ -1,6 +1,17 @@
-<div *ngIf="menus?.length > 0; else noMenus">
-    <ul *ngFor="let menus of menus" > 
-        <span>{{menus.id}}</span> {{menus.principal}} {{menus.price}}
+<!-- -->
+<div *ngIf="orders?.length > 0; else noOrder">
+    <ul *ngFor="let order of orders" > 
+        <div >
+       Pedido de : {{order.name}} 
+        <ul *ngFor="let item of order.order" >  
+             {{item.type}}
+             {{item.name}}
+
+        </ul>
+        </div>
+        <div>
+                     <button  (click)="deleteOrder(order)">Borrar</button>
+        </div>
     </ul>
 </div>
 
