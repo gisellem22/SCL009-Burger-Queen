@@ -17,6 +17,8 @@ export class WaiterComponent implements OnInit {
 
   total=0;
 
+  inputclient: string = "";
+
   constructor( private menuService: MenuService ) 
   {
    
@@ -58,7 +60,6 @@ export class WaiterComponent implements OnInit {
   });
   
   this.order.total = this.total;
-
 }
 
 onDelete(menu: Menu): void {
@@ -74,7 +75,7 @@ onDelete(menu: Menu): void {
   
   getMenu(): void {
     this.menuService.getMenu()
-        .subscribe(menu => this.menus = menu);
+        .subscribe(menu => this.menus = menu);                                                                                                                                                                     
   }
 
   
@@ -85,5 +86,11 @@ onDelete(menu: Menu): void {
    /*llamar a la funncion del servicio, para indicarle que debe enviar esta orden 
    escogida a firebase*/
    this.menuService.addOrder(this.order); 
-  }
+  //  this.order.name = '';
+   this.menus =[];
+   this.selectedMenu = [];
+   this.total = 0;
+   this.inputclient=' ';
+   }
+
 }
