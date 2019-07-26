@@ -1,0 +1,59 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2, auto);
+
+    grid-template-areas: "label total"
+                         "menu total"
+}
+.container > main,
+.container .menu-box
+.container .total-box {
+    color: purple;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.container .menu-box{
+    grid-area: menu;
+}
+.container .total-box{
+    grid-area: total;
+}
+
+.label {
+    color: white;
+    font-size: 20px;
+grid-area: label;
+}
+.btn-menu {  
+    color:  rgb(63, 7, 95);
+    border-radius: 5px;
+    margin: 5px;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.selected-option {
+    padding-left: 50px;
+    width: 300px;
+    float:left;
+}
+.menus-side {
+    float:left
+}

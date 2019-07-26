@@ -1,29 +1,21 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1> {{ title }} </h1>
-</div>
+<body>
 
-<nav>
-  <a routerLink="/waiter" routerLinkActive="active" 
-  style="background-color:black;
-     padding-left: 25px;
-     padding-right: 25px;
-     padding-top: 10px;
-     padding-bottom: 10px;
-     border-radius: 45px;
-     color: aliceblue;
-     margin: 5px;" 
-     >waiter</a> 
+<header>
+    <h1> {{ title }} </h1>
 
-  <a  style="background-color:black;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 45px;
-  color: aliceblue;
-  margin: 5px;" 
-   routerLink="/kitchen" routerLinkActive="active">kitchen</a>
+  
+  <nav class="router">
+        <a class="btn btn-outline-light btn-lg" routerLink="/waiter" routerLinkActive="active">waiter</a> 
+      
+        <a class="btn btn-outline-light btn-lg" routerLink="/kitchen" routerLinkActive="active">kitchen</a> 
+      </nav>
 
-</nav>
+      <nav class="title">
+          <img class="logo-img" src="https://cdn141.picsart.com/279174463002211.png?r1024x1024" alt="logo">
+          </nav>
+  </header>  
+
+
 <router-outlet></router-outlet>
+
+</body>
