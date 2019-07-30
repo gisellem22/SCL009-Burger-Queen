@@ -9,7 +9,7 @@ header{
     text-align:center;
     width: 90%;
     max-width: 1000px;
-    margin: 40px auto;
+    margin: 20px auto;
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(4,1fr);
@@ -23,7 +23,7 @@ h1 {
     color: white;
     font-family: 'Shadows Into Light Two', cursive;
     grid-area: h1;
-    
+    display: flex;
 }
 .header .title {
     grid-area: title;
