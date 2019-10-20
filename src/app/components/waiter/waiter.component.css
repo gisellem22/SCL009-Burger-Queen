@@ -1,11 +1,7 @@
-@import '~bootstrap/dist/css/bootstrap.min.css';
-@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
+.menu-box {
+    
 }
-.container {
+/* .container {
     width: 90%;
     max-width: 1000px;
     margin: 20px auto;
@@ -47,10 +43,8 @@
     grid-template-areas: "option option option"
                          
 
-}
-/* .options {
-    grid-area: option;
 } */
+/* 
 .btn-menu {  
     background:  rgb(63, 7, 95);
     color: white;
@@ -143,4 +137,4 @@
         grid-template-areas: "label total"
                              "menu total"
     }
-  }
+  } */

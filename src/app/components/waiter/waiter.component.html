@@ -1,4 +1,6 @@
 <section class="container"> 
+  <div class="row justify-content-center">
+    <main class="menu-box m-1 col-5">
   <div class="name">
       <div class="input-group input-group-lg">
           <div class="input-group-prepend">
@@ -7,15 +9,11 @@
           <input [value]="inputclient"  #clientName type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
         </div>
       </div>
-
-
-<main class="menu-box">
-
 <div class="box-options">
 
-      <button class="btn-menu" (click)="filterBreakFast('breakfast')">DESAYUNO</button>
-      <button class="btn-menu" (click)="filterPrincipal('principal')">PRINCIPAL</button>
-      <button class="btn-menu" (click)="filterBevarage('beverage')">LÍQUIDOS</button>
+      <button class="btn btn-primary btn-lg" (click)="filterBreakFast('breakfast')">DESAYUNO</button>
+      <button class="btn btn-primary btn-lg" (click)="filterPrincipal('principal')">PRINCIPAL</button>
+      <button class="btn btn-primary btn-lg" (click)="filterBevarage('beverage')">LÍQUIDOS</button>
 
 </div>
 
@@ -31,7 +29,7 @@
     </div>
 </main>
 
-<main class="total-box">
+<main class="total-box m-1 col-5">
 
 <div  *ngIf="selectedMenu" class="selected-option">
 
@@ -48,4 +46,5 @@
 
 </div>
 </main>
+</div>
 </section>
