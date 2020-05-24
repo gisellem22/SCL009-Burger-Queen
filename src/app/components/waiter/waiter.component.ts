@@ -12,6 +12,8 @@ import { ORDER } from 'src/app/order'
 export class WaiterComponent implements OnInit {  
 
   menus: Menu[];
+
+  title: string;
   
   order:ORDER;
 
@@ -33,17 +35,22 @@ export class WaiterComponent implements OnInit {
   this.getMenu();
    this.menus = this.menus.filter(element => {
       return element.type === menuType})
+      console.log(this.menus);
+      
   }
 
   clickMessage = '';
 
   filterBreakFast(menuType: string) {
+    this.title = 'DESAYUNO';
     this.filterType(menuType);
   }
   filterPrincipal(menuType: string) {
+    this.title = 'PRINCIPAL';
     this.filterType(menuType);
   }
   filterBevarage(menuType: string) {
+    this.title = 'LÍQUIDOS';
     this.filterType(menuType);
   }
 
@@ -81,16 +88,20 @@ onDelete(menu: Menu): void {
   
   sendOrder(name: string): void {
     this.order.name = name;
-    console.log("ORDER:", this.order);
-
+    if (this.order.order.length > 0) {
+      this.menuService.addOrder(this.order); 
+      //  this.order.name = '';
+       this.menus =[];
+       this.selectedMenu = [];
+       this.total = 0;
+       this.inputclient=' ';
+    } else {
+      console.log('complete el pedido');
+      
+    }
    /*llamar a la funncion del servicio, para indicarle que debe enviar esta orden 
    escogida a firebase*/
-   this.menuService.addOrder(this.order); 
-  //  this.order.name = '';
-   this.menus =[];
-   this.selectedMenu = [];
-   this.total = 0;
-   this.inputclient=' ';
+   
    }
 
 }

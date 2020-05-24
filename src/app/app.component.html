@@ -1,21 +1,41 @@
 <body>
 
-<header>
-    <h1> {{ title }} </h1>
-
-  
-  <nav class="router">
-        <a class="btn btn-outline-light btn-lg" routerLink="/waiter" routerLinkActive="active">PEDIDO</a> 
-      
-        <a class="btn btn-outline-light btn-lg" routerLink="/kitchen" routerLinkActive="active">COCINA</a> 
-      </nav>
-
-      <nav class="title">
-          <img class="logo-img" src="https://cdn141.picsart.com/279174463002211.png?r1024x1024" alt="logo">
-          </nav>
-  </header>  
-
+<div class="container-fluid">
+    <div class="row px-3 px-md-5">
+      <div class="col-8 col-sm-10 col-lg-11">
+        <div class="row h-100">
+          <div class="col-12 text-center pt-4 resp-align">
+            <h1> {{ title }} </h1>
+          </div>
+          <div class="col-12 pt-1 resp-show">
+            <div class="row d-flex justify-content-center">
+              <div class="col-6">
+                <a class="btn btn-outline-light btn-lg form-control" routerLink="/waiter" routerLinkActive="active">PEDIDO</a> 
+              </div>
+              <div class="col-6">
+                <a class="btn btn-outline-light btn-lg form-control" routerLink="/kitchen" routerLinkActive="active">COCINA</a> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 col-sm-2 col-lg-1 text-right px-0">
+          <img class="img-fluid pt-4" src="../assets/img/logo-burger-queen.png" alt="logo">
+      </div>
+      <div class="col-12 resp-hide ">
+        <div class="row d-flex justify-content-center">
+          <div class="col-6">
+            <a class="btn btn-outline-light btn-lg form-control" routerLink="/waiter" routerLinkActive="active">PEDIDO</a> 
+          </div>
+          <div class="col-6">
+            <a class="btn btn-outline-light btn-lg form-control" routerLink="/kitchen" routerLinkActive="active">COCINA</a> 
+          </div>
+        </div>
+      </div>
+    </div>
 
 <router-outlet></router-outlet>
+
+</div>
 
 </body>
