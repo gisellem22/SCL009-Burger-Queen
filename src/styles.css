@@ -21,6 +21,14 @@ body {
     font-size: 14px;
 }
 
+div {
+    outline: none !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
 .btn-secondary {
     background-color: #7952b3;
     border-color: #7952b3;
