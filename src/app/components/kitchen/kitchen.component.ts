@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { MenuService } from 'src/app/services/menu.service'
 import { ORDER } from 'src/app/order';
 
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-kitchen',
   templateUrl: './kitchen.component.html',
@@ -24,10 +26,17 @@ export class KitchenComponent implements OnInit {
 
   /*Elimina el ID de Firestore */
   deleteOrder(order:ORDER) {
-    const response = confirm('¿Quieres eliminar esta orden?');
-    if (response ) {
-      this.menuService.deleteOrder(order);
-    }
-    return;
+    Swal.fire({
+      title: 'Seguro que deseas cerrar el pedido?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#7952b3',
+      cancelButtonColor: '#7952b3',
+      confirmButtonText: 'Cerrar Pedido'
+    }).then((result) => {
+      if (result.value) {
+        this.menuService.deleteOrder(order);
+      }
+    })
   }
 }
