@@ -28,6 +28,17 @@ body {
     border-color: #b38fee
 }
 
+.total-header {
+    line-height: 15px;
+}
+.total-header label {
+    font-size: 12px;
+}
+
+.bg-purple {
+    background-color: #7952b3; 
+    color: #fff;
+}
 
 @media screen and (min-width:1024px){
     .resp-show {

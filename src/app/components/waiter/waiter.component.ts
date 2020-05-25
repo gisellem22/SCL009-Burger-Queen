@@ -88,17 +88,23 @@ onDelete(menu: Menu): void {
   
   sendOrder(name: string): void {
     this.order.name = name;
-    if (this.order.order.length > 0) {
-      this.menuService.addOrder(this.order); 
-      //  this.order.name = '';
-       this.menus =[];
-       this.selectedMenu = [];
-       this.total = 0;
-       this.inputclient=' ';
+    console.log(name);
+    if (name.length === 0) {
+      alert('Ingrese nombre de Cliente')
     } else {
-      console.log('complete el pedido');
-      
+      if (this.order.order.length > 0) {
+        this.menuService.addOrder(this.order); 
+        //  this.order.name = '';
+         this.menus =[];
+         this.selectedMenu = [];
+         this.total = 0;
+         this.inputclient=' ';
+      } else {
+        alert('complete el pedido');
+        
+      }
     }
+    
    /*llamar a la funncion del servicio, para indicarle que debe enviar esta orden 
    escogida a firebase*/
    
