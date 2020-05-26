@@ -57,8 +57,6 @@ this.order = this.orderCollection.snapshotChanges().pipe(map((changes => {
    la entregamos con esa estructura de objeto */
 
   addOrder(order2 : ORDER) {   // el "order2" es porque tenia tope con los diferntes order
-    console.log("llegoooooooooooo");
-    console.log(order2);
     
     this.orderCollection.add(
                             {   id : order2.id,
@@ -68,7 +66,7 @@ this.order = this.orderCollection.snapshotChanges().pipe(map((changes => {
                                 total : order2.total 
                               }
                                 
-                              ).then( _ => alert("Pedido enviado") ); // add es una promesa de firebase
+                              )
   }
 
   /* Elimina el pedido en kitchen. Para esto es necesario usar el ID que me entrega

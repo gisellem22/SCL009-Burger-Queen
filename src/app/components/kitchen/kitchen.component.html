@@ -1,25 +1,26 @@
-
-<section class="kitchen-box">
-    <main >
-            <div *ngIf="orders?.length > 0; else noOrder" >
-                    <ul *ngFor="let order of orders" > 
-                        <div class="order-queue" >
-                       <h1>Pedido de : {{order.name}}</h1> 
-                        <ul *ngFor="let item of order.order" >  
-                             <p>{{item.name}}</p>
-                
-                        </ul>
-                        <div>
-                                <button class="btn-menu" (click)="deleteOrder(order)">Borrar</button>
-                   </div>
-                        </div>
-            
-   </ul>
-</div> 
+<div class="container-fluid" *ngIf="!isLoaded">
+  <lottie-animation-view
+  [options]="lottieConfig"
+  [width]="300"
+  [height]="350">
+</lottie-animation-view>
+</div>
+<div class="container-fluid pt-4" *ngIf="isLoaded">
+  <div class="row">
+    <div class="col-sm-6 col-md-3" *ngFor="let order of orders">
+        <div class="card mb-3">
+            <div class="card-header text-uppercase text-center" style="color: #7952b3;"> 
+              <h5 style="font-family: 'Shadows Into Light Two', cursive; font-weight: bold">{{order.name}}</h5></div>
+            <div class="card-body" style="height: 250px; overflow-y: auto; overflow-x: hidden">
+              <button class="btn btn-outline-secondary w-100 mb-3"  *ngFor="let item of order.order">{{item.name}}</button>
+            </div>
+            <div class="card-footer border-0">
+                <button class="btn btn-secondary w-100" (click)="deleteOrder(order)">Cerrar Pedido</button>
+            </div>
+          </div>
+    </div>      
+</div>
 <ng-template #noOrders>
-       <h5>No hay Pedidos</h5>
-     </ng-template>    
-    </main>
-                                       
-</section>
-
+  <h5>No hay Pedidos</h5>
+</ng-template>
+</div>

@@ -1,51 +1,78 @@
-<section class="container"> 
-  <div class="name">
-      <div class="input-group input-group-lg">
+<div class="container-fluid py-3 px-0"> 
+  <div class="row d-flex justify-content-center  h-100">
+    <div class="col-md-5 pl-md-0 pr-md-2 h-100">
+      <div class="bg-white rounded px-4 pt-4 pb-2 h-100">
+        <div class="input-group input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text">Pedido de:</span>
+            <span class="btn btn-secondary text-uppercase">Cliente:</span>
           </div>
-          <input [value]="inputclient"  #clientName type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+          <input [(ngModel)]="inputclient" #clientName type="text" class="form-control text-uppercase" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-lg" />
+        </div>
+        <div class="mt-4">
+          <div class="row">
+            <div class="col-lg-4 mb-3 mb-lg-0">
+              <button class="btn btn-secondary btn-lg w-100" (click)="filterBreakFast('breakfast')">
+                DESAYUNO
+              </button>
+            </div>
+            <div class="col-lg-4 mb-3 mb-lg-0">
+              <button class="btn btn-secondary btn-lg w-100" (click)="filterPrincipal('principal')">
+                PRINCIPAL
+              </button>
+            </div>
+            <div class="col-lg-4 mb-3 mb-lg-0">
+              <button class="btn btn-secondary btn-lg w-100" (click)="filterBevarage('beverage')">
+                LÍQUIDOS
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3 mb-3">
+          <h5 class="text-center pb-0 mb-0" style="color: #333333;">{{title}}</h5>
+              <button class="btn btn-outline-secondary btn-lg w-100 mt-4"  *ngFor="let menu of menus" (click)="onSelect(menu)">
+                {{ menu.name | uppercase }} ${{ menu.price }}
+              </button>
         </div>
       </div>
-
-
-<main class="menu-box">
-
-<div class="box-options">
-
-      <button class="btn-menu" (click)="filterBreakFast('breakfast')">DESAYUNO</button>
-      <button class="btn-menu" (click)="filterPrincipal('principal')">PRINCIPAL</button>
-      <button class="btn-menu" (click)="filterBevarage('beverage')">LÍQUIDOS</button>
-
-</div>
-
-<div>
-    <ul>
-      <li *ngFor="let menu of menus"
-      (click)="onSelect(menu)"
-      class="food"
-      >
-        <span>{{menu.name| uppercase}}</span> ${{menu.price}}
-      </li>
-    </ul>
     </div>
-</main>
 
-<main class="total-box">
+    <div class="col-md-6 mt-4 mt-md-0 pr-md-0 pl-md-3">
+      <div class="bg-white rounded p-4 h-100">
+        <div class="text-uppercase">
+         <div class="row">
+           <div class="col-4 total-header" style="color: #333333;">
+              <label class="mb-0">Pedido de:</label>
+              <h4>{{inputclient}}</h4>
+           </div>
+           <div class="col-3 total-header" style="color: #333333;">
+              <label class="mb-0">Total $</label>
+              <h4>{{ total }}</h4>
+           </div>
+           <div class="col-5 text-right">
+            <button class="btn btn-secondary btn-lg text-uppercase w-100" (click)="sendOrder(clientName.value)">
+              Enviar Pedido
+            </button>
+           </div>
 
-<div  *ngIf="selectedMenu" class="selected-option">
-
-<ul>
-<li *ngFor="let menu of selectedMenu">
-<p>{{menu.name | uppercase}} ${{menu.price}}  <img  width="25px"  (click)="onDelete(menu)"  src="../../../assets/img/rounded-remove-button.png"> </p>
-</li>
-</ul>
-
-<div class="result">
-    <h3>Total = ${{total}} </h3> 
-    <button class="btn-menu" (click)="sendOrder(clientName.value)">Enviar Pedido</button>    
+         </div>
+        </div>
+        <div *ngIf="selectedMenu">
+          <div class="row"  *ngFor="let menu of selectedMenu">
+            <div class="col-9 col-lg-10">
+              <button class="btn btn-outline-secondary btn-lg w-100 mt-4">
+                {{ menu.name | uppercase }} ${{ menu.price }}          
+              </button>
+            </div>
+            <div class="col-3 col-lg-2">
+              <button class="btn btn-outline-danger btn-lg w-100 mt-4 pb-0 px-0" (click)="onDelete(menu)">
+                <span class="material-icons pb-0">clear</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-</div>
-</main>
-</section>
