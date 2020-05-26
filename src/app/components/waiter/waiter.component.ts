@@ -89,7 +89,7 @@ onDelete(menu: Menu): void {
   sendOrder(name: string): void {
     this.order.name = name;
     console.log(this.order.order);
-    if (name.length === 0) {
+    if (name.length === 0 || /^\s*$/.test(name)) {
       Swal.fire({
         title: 'Informa nombre del Cliente',
         icon: 'warning',
