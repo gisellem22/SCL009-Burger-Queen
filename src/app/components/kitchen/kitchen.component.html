@@ -10,8 +10,8 @@
     <div class="col-sm-6 col-md-3" *ngFor="let order of orders">
         <div class="card mb-3">
             <div class="card-header text-uppercase text-center" style="color: #7952b3;"> 
-              <h5 style="font-family: 'Shadows Into Light Two', cursive; font-weight: bold">{{order.name}}</h5></div>
-            <div class="card-body" style="height: 250px; overflow-y: auto; overflow-x: hidden">
+              <h5 class="pb-0 mb-0" style="font-family: 'Shadows Into Light Two', cursive; font-weight: bold">{{order.name}}</h5></div>
+            <div class="card-body" style="height: 200px; overflow-y: auto; overflow-x: hidden">
               <button class="btn btn-outline-secondary w-100 mb-3"  *ngFor="let item of order.order">{{item.name}}</button>
             </div>
             <div class="card-footer border-0">
