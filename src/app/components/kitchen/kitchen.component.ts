@@ -12,15 +12,25 @@ import Swal from 'sweetalert2';
 
 })
 export class KitchenComponent implements OnInit {
-
- orders : ORDER[];
+  
+  orders : ORDER[];
+  lottieConfig: Object;
+  isLoaded: boolean;
 
   constructor(public menuService: MenuService) {
+    this.lottieConfig = {
+      path: '../../../assets/3196-star-badge.json',
+      renderer: 'canvas',
+      autoplay: true,
+      loop: true
+  };
+  this.isLoaded = false;
    }
 
   ngOnInit() {
       this.menuService.getOrders().subscribe(order =>{
       this.orders = order; 
+      this.isLoaded = true;
     });
   }
 

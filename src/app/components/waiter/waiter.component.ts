@@ -26,13 +26,13 @@ export class WaiterComponent implements OnInit {
 
   clickMessage = '';
 
+ 
 
   constructor( private menuService: MenuService ) {}
 
   ngOnInit() {
     this.order= new ORDER(0,"denisse", [],0);
   }
-  
   
   filterType(menuType: string) {
   this.getMenu();

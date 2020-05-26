@@ -12,6 +12,8 @@ import { AngularFireModule } from  'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
 
+import { LottieAnimationViewModule } from 'ng-lottie';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +27,7 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     AngularFireModule,
     AngularFirestoreModule,
+    LottieAnimationViewModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase, 'angular-fs'),
     
   ],
