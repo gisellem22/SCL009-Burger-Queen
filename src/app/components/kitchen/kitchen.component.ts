@@ -20,6 +20,7 @@ export class KitchenComponent implements OnInit {
   constructor(public menuService: MenuService) {
     this.lottieConfig = {
       path: '../../../assets/3196-star-badge.json',
+      
       renderer: 'canvas',
       autoplay: true,
       loop: true
