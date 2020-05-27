@@ -15,10 +15,27 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin:0px;
+    font-family: 'Insaniburger';
+    letter-spacing: 2px;
+    
+
+}
+
+@font-face {
+    font-family: 'Insaniburger';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Insaniburger'), url('./assets/fonts/Insanibu.woff') format('woff');
+    }
+    
+.gold-color {
+        color: #ffc107;
 }
 
 .btn {
     font-size: 14px;
+    letter-spacing: 1px;
+
 }
 
 div {
@@ -32,6 +49,7 @@ div {
 .btn-secondary {
     background-color: #7952b3;
     border-color: #7952b3;
+    color: #ffc107;
 }
 
 .btn-secondary:hover {
