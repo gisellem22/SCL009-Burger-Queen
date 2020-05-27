@@ -32,6 +32,12 @@ body {
         color: #ffc107;
 }
 
+.logo-title {
+    color: #ffc107;
+    letter-spacing: 5px;
+    font-size: 70px;
+}
+
 .btn {
     font-size: 18px;
     letter-spacing: 1px;
@@ -100,6 +106,9 @@ div {
     .resp-hide {
         display: none;
     }
+    .logo-title {
+        font-size: 50px;
+    }
 }
 @media screen and (min-width:320px) and (max-width:460px){
     .resp-show {
@@ -113,6 +122,9 @@ div {
         display: flex!important;
         align-items: center!important;
     }
+    .logo-title {
+        font-size: 40px;
+    }
 }
 @media screen and (max-width:320px){
     .resp-show {
@@ -125,5 +137,8 @@ div {
         height: 100% !important;
         display: flex!important;
         align-items: center!important;
+    }
+    .logo-title {
+        font-size: 40px;
     }
 }
